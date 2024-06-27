@@ -18,12 +18,23 @@ The datasets used in this work can be accessed below:
 |   Pneumonia  |   Chest X-Ray  |   [Link](https://www.rsna.org/rsnai/ai-image-challenge/rsna-pneumonia-detection-challenge-2018)  |
 |   HeadCT |   Brain CT (2D)  |   [Link](https://www.kaggle.com/datasets/felipekitamura/head-ct-hemorrhage)  |
 
+## Dependencies
+
+Setup the conda environment with `environment.yml`:
+```sh
+conda env create -f environment.yml
+```
+Active the `typicalmood` conda environment:
+```sh
+source activate
+conda activate typicalmood
+```
 
 ## Training
 
-Train the model on the ISIC dataset with:
+Train the model on the ISIC dataset:
 
-```
+```sh
 python train.py --data isic --batch_size 8 --alpha 2.0 --patience 10 
 ```
 
