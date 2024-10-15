@@ -1,9 +1,10 @@
 # Typicality excels Likelihood for Unsupervised Out-of-Distribution Detection in Medical Imaging
 
 This repository represents the code of the paper
-_[Typicality excels Likelihood for Unsupervised
+_[Typicality Excels Likelihood for Unsupervised
 Out-of-Distribution Detection in Medical
-Imaging](https://)_.
+Imaging](https://openreview.net/pdf?id=a5Z1p2n7CN)_.
+
 
 The code is adapted from [here](https://github.com/A-Vzer/WaveletFlowPytorch).
 
