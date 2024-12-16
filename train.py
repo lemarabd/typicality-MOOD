@@ -101,13 +101,11 @@ def main():
 
             res_dict = model(x, partial_level=args.level)
             likelihood = torch.mean(res_dict["likelihood"])
-            likelihood.backward(retain_graph=True) 
+            likelihood.backward(retain_graph=True)
 
             grad_loss = x.grad.clone() # gradient of log-likelihood wrt x
             grad_loss = grad_loss.flatten(start_dim=1) # flatten the gradient
             grad_loss = torch.linalg.norm(grad_loss, dim=1, ord=2) # l2 norm of the gradient
-            
-            optimizer.step()
             
             ep_grad.append(grad_loss.detach())
             ep_likelihood.append(likelihood.detach())
@@ -118,6 +116,7 @@ def main():
             
             optimizer.zero_grad()
             avg_loss.backward(retain_graph=True)
+            optimizer.step()
 
         # check and update
         if lowest > avg_loss:    
